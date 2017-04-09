@@ -1,23 +1,43 @@
-var Player = function (x,y) {
 
+/**
+* Creates the Player with a given position
+* @class
+* @param {number} x
+* @param {number} y
+*/
+var Player = function (x,y) {
   this.sprite = 'images/char-boy.png';
   this.x = x;
   this.y = y;
 }
 
+
+/**
+* Updates the player
+* @param {number} dt - difference in time between the last update
+*/
 Player.prototype.update = function (dt) {
 
 }
 
+
+/** Renders the player image */
 Player.prototype.render = function () {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+
+/** Resets the players position to its inital position*/
 Player.prototype.reset = function () {
   this.x = Player.INITIAL_X;
   this.y = Player.INITIAL_Y;
 }
 
+
+/**
+* Handles the user input
+* @param {string} key - The key code in string format
+*/
 Player.prototype.handleInput = function (key) {
   switch (key) {
     case 'left':
@@ -39,7 +59,7 @@ Player.prototype.handleInput = function (key) {
       if(this.y - TILE_HEIGHT >= 0){
         this.y -= TILE_HEIGHT;
       }else{
-        this.reset()
+        this.reset();
       }
       break;
   }
