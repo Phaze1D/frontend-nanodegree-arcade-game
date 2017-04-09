@@ -1,7 +1,10 @@
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-var allEnemies = []
+var allEnemies = [
+  new Enemy(0, 2, 100),
+  new Enemy(0, 3, 1000)
+]
 var player = new Player(Player.INITIAL_X,Player.INITIAL_Y)
 
 
