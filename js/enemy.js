@@ -10,7 +10,7 @@ var Enemy = function(x, row, velocity) {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
 
-  Entity.call(this, x, TILE_HEIGHT/1.33 - Enemy.HEIGHT/2 + TILE_HEIGHT * row, 'images/enemy-bug.png')
+  Entity.call(this, x, TILE_HEIGHT/1.33 - Enemy.HEIGHT/2 + TILE_HEIGHT * row, 'images/enemy-bug.png');
   this.velocity = velocity;
   this.setHitBox({
     x: this.x,
@@ -34,7 +34,7 @@ Enemy.prototype.update = function(dt) {
     }else{
       this.x = -Enemy.WIDTH;
     }
-    this.hitBox.x = this.x
+    this.hitBox.x = this.x;
 };
 
 
