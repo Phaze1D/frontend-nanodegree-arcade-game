@@ -5,9 +5,10 @@ var allEnemies = [
   new Enemy(0, 2, 100),
   new Enemy(0, 3, 200),
   new Enemy(0, 3, 500),
-  new Enemy(0, 1, 300),
-]
-var player = new Player(Player.INITIAL_X,Player.INITIAL_Y)
+  new Enemy(0, 1, 300)
+];
+
+var player = new Player(Player.INITIAL_X,Player.INITIAL_Y);
 
 
 // This listens for key presses and sends the keys to your
