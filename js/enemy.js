@@ -12,6 +12,12 @@ var Enemy = function(x, row, velocity) {
     this.x = x;
     this.y = TILE_HEIGHT/1.33 - Enemy.HEIGHT/2 + TILE_HEIGHT * row;
     this.velocity = velocity;
+    this.hitBox = {
+      x: this.x,
+      y: this.y + Enemy.HITBOX_OFFSET_Y,
+      width: Enemy.WIDTH,
+      height: 70
+    };
 };
 
 
@@ -26,6 +32,7 @@ Enemy.prototype.update = function(dt) {
     }else{
       this.x = -Enemy.WIDTH;
     }
+    this.hitBox.x = this.x
 };
 
 
@@ -36,3 +43,5 @@ Enemy.prototype.render = function() {
 
 Enemy.WIDTH = 101;
 Enemy.HEIGHT = 171;
+Enemy.HITBOX_OFFSET_X = 0;
+Enemy.HITBOX_OFFSET_Y = 75;
