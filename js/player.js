@@ -9,6 +9,12 @@ var Player = function (x,y) {
   this.sprite = 'images/char-boy.png';
   this.x = x;
   this.y = y;
+  this.hitBox = {
+    x: this.x + Player.HITBOX_OFFSET_X,
+    y: this.y + Player.HITBOX_OFFSET_Y,
+    width: 72,
+    height: 55
+  };
 }
 
 
@@ -63,9 +69,14 @@ Player.prototype.handleInput = function (key) {
       }
       break;
   }
+
+  this.hitBox.x = this.x + Player.HITBOX_OFFSET_X;
+  this.hitBox.y = this.y + Player.HITBOX_OFFSET_Y;
 }
 
 Player.WIDTH = 101;
 Player.HEIGHT = 171;
 Player.INITIAL_X = GAME_WIDTH/2 - Player.WIDTH/2;
 Player.INITIAL_Y = GAME_HEIGHT - Player.HEIGHT - TILE_HEIGHT/1.5;
+Player.HITBOX_OFFSET_X = 30;
+Player.HITBOX_OFFSET_Y = 85;
