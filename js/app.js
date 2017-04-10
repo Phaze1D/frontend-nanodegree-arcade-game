@@ -3,7 +3,9 @@
 // Place the player object in a variable called player
 var allEnemies = [
   new Enemy(0, 2, 100),
-  new Enemy(0, 3, 1000)
+  new Enemy(0, 3, 200),
+  new Enemy(0, 3, 500),
+  new Enemy(0, 1, 300),
 ]
 var player = new Player(Player.INITIAL_X,Player.INITIAL_Y)
 
