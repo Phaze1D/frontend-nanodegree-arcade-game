@@ -10,4 +10,6 @@ Clone the repo
 $ git clone https://github.com/Phaze1D/frontend-nanodegree-arcade-game.git
 ```
 
-Just open [index.html](./index.html) file to play the game
+Just open [index.html](./index.html) file in any browser to play the game or you can play visit the github page at
+
+[https://phaze1d.github.io/frontend-nanodegree-arcade-game/](https://phaze1d.github.io/frontend-nanodegree-arcade-game/)
