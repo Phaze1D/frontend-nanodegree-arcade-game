@@ -2,20 +2,22 @@
 /**
 * Creates the Player with a given position
 * @class
+* @extends Entity
 * @param {number} x
 * @param {number} y
 */
 var Player = function (x,y) {
-  this.sprite = 'images/char-boy.png';
-  this.x = x;
-  this.y = y;
-  this.hitBox = {
+  Entity.call(this, x, y, 'images/char-boy.png');
+  this.setHitBox({
     x: this.x + Player.HITBOX_OFFSET_X,
     y: this.y + Player.HITBOX_OFFSET_Y,
     width: 72,
     height: 55
-  };
+  });
 }
+
+Player.prototype = Object.create(Entity.prototype);
+Player.prototype.constructor = Player;
 
 
 /**
@@ -25,12 +27,6 @@ var Player = function (x,y) {
 Player.prototype.update = function (dt) {
 
 }
-
-
-/** Renders the player image */
-Player.prototype.render = function () {
-  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
 
 
 /** Resets the players position to its inital position*/

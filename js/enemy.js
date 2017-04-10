@@ -1,6 +1,7 @@
 /**
 * Creates an enemy with a row and velocity
 * @class
+* @extends Entity
 * @param {number} x
 * @param {number} row - The row where the enemy lives
 * @param {number} velocity - The enemies velocity
@@ -8,18 +9,19 @@
 var Enemy = function(x, row, velocity) {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
-    this.sprite = 'images/enemy-bug.png';
-    this.x = x;
-    this.y = TILE_HEIGHT/1.33 - Enemy.HEIGHT/2 + TILE_HEIGHT * row;
-    this.velocity = velocity;
-    this.hitBox = {
-      x: this.x,
-      y: this.y + Enemy.HITBOX_OFFSET_Y,
-      width: Enemy.WIDTH,
-      height: 70
-    };
+
+  Entity.call(this, x, TILE_HEIGHT/1.33 - Enemy.HEIGHT/2 + TILE_HEIGHT * row, 'images/enemy-bug.png')
+  this.velocity = velocity;
+  this.setHitBox({
+    x: this.x,
+    y: this.y + Enemy.HITBOX_OFFSET_Y,
+    width: Enemy.WIDTH,
+    height: 70
+  });
 };
 
+Enemy.prototype = Object.create(Entity.prototype);
+Enemy.prototype.constructor = Enemy;
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -35,11 +37,6 @@ Enemy.prototype.update = function(dt) {
     this.hitBox.x = this.x
 };
 
-
-// Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
 
 Enemy.WIDTH = 101;
 Enemy.HEIGHT = 171;
