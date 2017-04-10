@@ -81,7 +81,6 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -94,8 +93,29 @@ var Engine = (function(global) {
     function updateEntities(dt) {
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
+            if(checkCollisions(player, enemy)) player.reset();
         });
         player.update();
+    }
+
+    /**
+    * Check if entity2 is inside entity1
+    * @param {object} entity1
+    * @param {object} entity2
+    * @return {boolean} if there inside each other true else false
+    */
+    function checkCollisions(entity1, entity2) {
+      var insideX = (entity2.hitBox.x >= entity1.hitBox.x &&
+                    entity2.hitBox.x <= entity1.hitBox.x + entity1.hitBox.width) ||
+                    (entity2.hitBox.x + entity2.hitBox.width >= entity1.hitBox.x &&
+                    entity2.hitBox.x + entity2.hitBox.width <= entity1.hitBox.x + entity1.hitBox.width);
+
+      var insideY = (entity2.hitBox.y >= entity1.hitBox.y &&
+                    entity2.hitBox.y <= entity1.hitBox.y + entity1.hitBox.height) ||
+                    (entity2.hitBox.y + entity2.hitBox.height >= entity1.hitBox.y &&
+                    entity2.hitBox.y + entity2.hitBox.height <= entity1.hitBox.y + entity1.hitBox.height);
+
+      return insideY && insideX;
     }
 
     /* This function initially draws the "game level", it will then call
