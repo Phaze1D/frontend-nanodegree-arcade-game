@@ -15,3 +15,6 @@ To get the game up and running just follow these steps
 
 1. Fork or Clone the repo
 2. Open [index.html](index.html) file in your default browser
+
+### How To Play
+You move the Player with the arrow keys &larr; &uarr; &rarr; &darr; . Objective of the game is to get to the water without getting hit by the bugs. Once you reach the water or get hit by a bug the game will reset.
