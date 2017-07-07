@@ -1,18 +1,17 @@
-frontend-nanodegree-arcade-game
-===============================
+# Classic Arcade Game Clone
+> Udacity Frontend Nanodegree Project 5
 
-Simple html canvas frogger game that I created for [Udacity Frontend Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001)
+This project is a simple implementation of the class arcade game Frogger. Building a game is an excellent way to learn Object Oriented Design (OOD) because we can think of every object in the game world as an Class when coding our game. This project teaches us how to use OOD in Javascript to create clean and maintainable code.
 
-## Get Started
-Clone the repo
+<p align="center">
+ <img src="readme_imgs/screenshot.gif"/>
+</p>
 
-```
-$ git clone https://github.com/Phaze1D/frontend-nanodegree-arcade-game.git
-```
 
-Just open [index.html](./index.html) file in any browser to play the game or you can play visit the github page at
+## Development
+The game was built with the HTML canvas element and uses the `requestAnimationFrame` method for the game loop. There are two main game objects, the Player and the Enemy. Both objects inherit from the Entity object that contains the common properties like the position and the sprite image of the object.
 
-[https://phaze1d.github.io/frontend-nanodegree-arcade-game/](https://phaze1d.github.io/frontend-nanodegree-arcade-game/)
+To get the game up and running just follow these steps
 
-## How To Play
-To move the player use the arrow keys ``← ↑ → ↓ `` and try to avoid the bugs 
+1. Fork or Clone the repo
+2. Open [index.html](index.html) file in your default browser
